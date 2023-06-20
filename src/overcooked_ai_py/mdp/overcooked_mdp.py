@@ -1404,7 +1404,7 @@ class OvercookedGridworld(object):
         events_infos = {
             event: [False] * self.num_players for event in EVENT_TYPES
         }
-        assert not self.is_terminal(shaped_reward_by_agent
+        assert not self.is_terminal(
             state
         ), "Trying to find successor of a terminal state: {}".format(state)
 
