@@ -1074,7 +1074,19 @@ POTENTIAL_CONSTANTS = {
     },
 }
 
+class Explanations:
+        def __init__(self):
+            self.collide = False
+            self.objectif = "cook"
 
+        def get_explanation(self):
+
+            if (self.collide) : end_m = "The pass is obstructed"
+
+            else : end_m = "The pass is free"
+
+            return "Mon objectif est " + self.objectif + "\n" + end_m
+            
 
 class OvercookedGridworld(object):
     """
@@ -1148,6 +1160,8 @@ class OvercookedGridworld(object):
         self._prev_potential_params = {}
         # determines whether to start cooking automatically once 3 items are in the pot
         self.old_dynamics = old_dynamics
+
+        self.explain=Explanations()
 
     @staticmethod
     def from_layout_name(layout_name, **params_to_overwrite):
@@ -1236,12 +1250,7 @@ class OvercookedGridworld(object):
     #####################
     # BASIC CLASS UTILS #
     #####################
-    
-    class Explanations:
-        def __init__(self):
-            self.collide = False
-            
-    explain=Explanations()
+
     
     def __eq__(self, other):
         return (
@@ -1395,7 +1404,7 @@ class OvercookedGridworld(object):
         events_infos = {
             event: [False] * self.num_players for event in EVENT_TYPES
         }
-        assert not self.is_terminal(
+        assert not self.is_terminal(shaped_reward_by_agent
             state
         ), "Trying to find successor of a terminal state: {}".format(state)
 
@@ -1437,10 +1446,6 @@ class OvercookedGridworld(object):
                 new_state, motion_planner
             )
         return new_state, infos
-
-
-    def Is_collide(self):
-        return self.explain.collide
 
     def resolve_interacts(self, new_state, joint_action, events_infos):
         """
@@ -1573,7 +1578,7 @@ class OvercookedGridworld(object):
                             events_infos,
                             new_state,
                             old_soup,
-                            soup,
+                            soup,sparse_reward,
                             obj.name,
                             player_idx,
                         )
