@@ -15,7 +15,6 @@ from overcooked_ai_py.utils import (
 )
 
 
-
 class Recipe:
     MAX_NUM_INGREDIENTS = 3
 
@@ -394,7 +393,6 @@ class ObjectState(object):
         """
         self.name = name
         self._position = tuple(position)
-        
 
     @property
     def position(self):
@@ -1086,7 +1084,6 @@ class Explanations:
             else : end_m = "The pass is free"
 
             return "Mon objectif est " + self.objectif + "\n" + end_m
-            
 
 class OvercookedGridworld(object):
     """
@@ -1097,6 +1094,7 @@ class OvercookedGridworld(object):
 
     TODO: clean the organization of this class further.
     """
+
     #########################
     # INSTANTIATION METHODS #
     #########################
@@ -1246,12 +1244,11 @@ class OvercookedGridworld(object):
             **kwargs,
         }
         Recipe.configure(self.recipe_config)
-     
+
     #####################
     # BASIC CLASS UTILS #
     #####################
 
-    
     def __eq__(self, other):
         return (
             np.array_equal(self.terrain_mtx, other.terrain_mtx)
@@ -1286,7 +1283,7 @@ class OvercookedGridworld(object):
     ##############
     # GAME LOGIC #
     ##############
-    
+
     def get_actions(self, state):
         """
         Returns the list of lists of valid actions for 'state'.
@@ -1425,7 +1422,6 @@ class OvercookedGridworld(object):
 
         # Resolve player movements
         self.resolve_movement(new_state, joint_action)
-
 
         # Finally, environment effects
         self.step_environment_effects(new_state)
@@ -1578,7 +1574,7 @@ class OvercookedGridworld(object):
                             events_infos,
                             new_state,
                             old_soup,
-                            soup,sparse_reward,
+                            soup,
                             obj.name,
                             player_idx,
                         )
@@ -1613,10 +1609,11 @@ class OvercookedGridworld(object):
         if not discounted:
             if not recipe in state.all_orders:
                 return 0
+
             if not recipe in state.bonus_orders:
                 return recipe.value
 
-            return self.order_bonus *recipe.value
+            return self.order_bonus * recipe.value
         else:
             # Calculate missing ingredients needed to complete recipe
             missing_ingredients = list(recipe.ingredients)
@@ -1728,8 +1725,7 @@ class OvercookedGridworld(object):
         if self.is_transition_collision(old_positions, new_positions):
             return old_positions
         return new_positions
-        
-    
+
     def _get_terrain_type_pos_dict(self):
         pos_dict = defaultdict(list)
         for y, terrain_row in enumerate(self.terrain_mtx):
