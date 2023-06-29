@@ -429,7 +429,7 @@ class OvercookedGame(Game):
         self.mdp = None
         self.mp = None
         self.score = 0
-        self.phi = 0get_policy
+        self.phi = 0
         self.max_time = min(int(gameTime), MAX_GAME_TIME)
         self.npc_policies = {}
         self.npc_state_queues = {}
