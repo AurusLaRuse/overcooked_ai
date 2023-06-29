@@ -1077,8 +1077,8 @@ class Explanations(object):
             self.collide = False
             self.objectif = "cook "
             self.self.grad=[]
-            self.state=0
-            self.npv_action=0
+            self.state=None
+            self.npv_action=None
 
         def get_gradient(self,state,npv_action):
             self.state=state
