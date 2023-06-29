@@ -1072,11 +1072,13 @@ POTENTIAL_CONSTANTS = {
     },
 }
 
-class Explanations:
+class Explanations(object):
         def __init__(self):
             self.collide = False
             self.objectif = "cook "
             self.self.grad=[]
+            self.state=0
+            self.npv_action=0
 
         def get_gradient(self,state,npv_action):
             self.state=state
