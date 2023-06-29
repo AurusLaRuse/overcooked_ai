@@ -1075,7 +1075,16 @@ POTENTIAL_CONSTANTS = {
 class Explanations:
         def __init__(self):
             self.collide = False
-            self.objectif = "cook"
+            self.objectif = "cook "
+            self.self.grad=[]
+
+        def get_gradient(self,state,npv_action):
+            self.state=state
+            self.npv_action=action
+
+
+        def log_gradient(self):
+            return "State | type : " + type(self.state) + "\n" +  "Deçision | type : " + type(self.npv_action)
 
         def get_explanation(self):
 
@@ -1083,7 +1092,7 @@ class Explanations:
 
             else : end_m = "The pass is free"
 
-            return "Mon objectif est " + self.objectif + "\n" + end_m
+            return "Mon objectif est " + self.objectif + end_m
 
 class OvercookedGridworld(object):
     """
