@@ -1076,7 +1076,7 @@ class Explanations(object):
         def __init__(self):
             self.collide = False
             self.objectif = "cook "
-            self.self.grad=[]
+            self.grad=[]
             self.state=None
             self.npv_action=None
 
