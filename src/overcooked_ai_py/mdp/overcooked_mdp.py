@@ -1153,8 +1153,6 @@ class OvercookedGridworld(object):
             self.objectif = "cook "
             self.grad=[]
             self.future= None
-            self.state=None
-            self.npc_action=None
             self.action_to_overcooked_action = {
             "STAY": Action.STAY,
             "UP": Direction.NORTH,
@@ -1197,9 +1195,10 @@ class OvercookedGridworld(object):
        
             self.future=future + compl
 
+        """
         def get_gradient(self,state,npc_action):
             self.state=state
-            self.npc_action=npc_action
+            self.npc_action=npc_action"""
 
 
         def log_gradient(self):
