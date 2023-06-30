@@ -1078,15 +1078,15 @@ class Explanations(object):
             self.objectif = "cook "
             self.grad=[]
             self.state=None
-            self.npv_action=None
+            self.npc_action=None
 
-        def get_gradient(self,state,npv_action):
+        def get_gradient(self,state,npc_action):
             self.state=state
-            self.npv_action=action
+            self.npc_action=npc_action
 
 
         def log_gradient(self):
-            return "State | type : " + type(self.state) + "\n" +  "Deçision | type : " + type(self.npv_action)
+            return "State : " + str(self.state) + "\n" +  "Deçision : " + str(self.npc_action)
 
         def get_explanation(self):
 
