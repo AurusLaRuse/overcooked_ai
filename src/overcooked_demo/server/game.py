@@ -508,7 +508,7 @@ class OvercookedGame(Game):
         while self._is_active:
             state = queue.get()
             npc_action, _ = policy.action(state)
-            self.mdp.explain.get_gradient(state,npv_action)
+            self.mdp.explain.get_gradient(state,npc_action)
             super(OvercookedGame, self).enqueue_action(policy_id, npc_action)
 
     def is_full(self):
@@ -629,7 +629,7 @@ class OvercookedGame(Game):
             )
         self.state = self.mdp.get_standard_start_state()
         if self.show_potential:
-            self.phi = self.mdp.potential_function(npc_policy_consumer
+            self.phi = self.mdp.potential_function(
                 self.state, self.mp, gamma=0.99
             )
         self.start_time = time()
