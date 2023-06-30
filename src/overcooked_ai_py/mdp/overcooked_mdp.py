@@ -1072,29 +1072,6 @@ POTENTIAL_CONSTANTS = {
     },
 }
 
-class Explanations(object):
-        def __init__(self):
-            self.collide = False
-            self.objectif = "cook "
-            self.grad=[]
-            self.state=None
-            self.npc_action=None
-
-        def get_gradient(self,state,npc_action):
-            self.state=state
-            self.npc_action=npc_action
-
-
-        def log_gradient(self):
-            return "State : " + str(self.state) + "\n" +  "Deçision : " + str(self.npc_action)
-
-        def get_explanation(self):
-
-            if (self.collide) : end_m = "The pass is obstructed"
-
-            else : end_m = "The pass is free"
-
-            return "Mon objectif est " + self.objectif + end_m
 
 class OvercookedGridworld(object):
     """
@@ -1170,7 +1147,73 @@ class OvercookedGridworld(object):
         # determines whether to start cooking automatically once 3 items are in the pot
         self.old_dynamics = old_dynamics
 
-        self.explain=Explanations()
+    class Explanations(object):
+        def __init__(self):
+            self.collide = False
+            self.objectif = "cook "
+            self.grad=[]
+            self.future= None
+            self.state=None
+            self.npc_action=None
+            self.action_to_overcooked_action = {
+            "STAY": Action.STAY,
+            "UP": Direction.NORTH,
+            "DOWN": Direction.SOUTH,
+            "LEFT": Direction.WEST,
+            "RIGHT": Direction.EAST,
+            "SPACE": Action.INTERACT,
+            }
+
+        def vision(self, model,state,npc_action):
+
+            prev_state=state
+            objectif = npc_action 
+            c=1
+
+            if objectif == "interact"
+                compl = " now"
+
+            else :
+                While (objectif != "interact") or c<6:
+                    next_state,info =self.get_state_transition(self, prev_state, self.action_to_overcooked_action[objectif])
+                    objectif=model.action(next_state)
+                    prev_state=next_state
+                    c+=1
+
+                compl = " in" + str(c) + "actions"
+                    
+            for key in self.terrain_pos_dict:
+                if self.terrain_pos_dict[key] == prev_state[Players.position] + prev_state[Players.orientation]: 
+                    if (key == "D"):
+                        future = "I want to pick a plate !"
+                    elif (key == "O"):
+                        future = "I want to take an onion !"
+                    elif (key == "S"):
+                        future = "I want to serve the soup !"
+                    elif (key == "P"):
+                        future = "I want to put onions in the pot !"
+                    elif (key == "X"):
+                        future = "I want to interact with the counter"
+       
+            self.future=future + compl
+
+        def get_gradient(self,state,npc_action):
+            self.state=state
+            self.npc_action=npc_action
+
+
+        def log_gradient(self):
+            return "State : " + str(self.state) + "\n" +  "Deçision : " + str(self.npc_action)
+
+        def get_explanation(self):
+
+            if (self.collide) : end_m = "The pass is obstructed"
+
+            else : end_m = "The pass is free"
+
+            return "Mon objectif est " + self.objectif + end_m
+
+    self.explain=Explanations()
 
     @staticmethod
     def from_layout_name(layout_name, **params_to_overwrite):
