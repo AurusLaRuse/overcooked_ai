@@ -16,7 +16,9 @@ The objective of this project is to enhance cooperation between a computer-contr
 - `app.py`: The Flask app 
 - `static`:
     - `js` : contain the index.js to 
-    - `templates` : contain the index.js to 
+    - `templates` : contain the index.js to
+ 
+
 
 
 
