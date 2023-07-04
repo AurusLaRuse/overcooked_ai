@@ -1,5 +1,6 @@
 # Project : Explanability of the Overcooked-AI
-⚠️**The explanation of the game and how to use the environement to play it is folowing this explanation of our work**
+
+⚠️**The explanation of the game and how to use the environement to play it is folowing this explanation of our work **
 
 
 
