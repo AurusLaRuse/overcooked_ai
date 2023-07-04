@@ -8,7 +8,7 @@ The objective of this project is to enhance cooperation between a computer-contr
 
 `overcooked_ai_py/mdp/`:
 
-- `overcooked_env.py`: environment classes built on top of the Overcooked mdp
+- `overcooked_mdp.py`: environment classes built on top of the Overcooked mdp
 
 `overcooked_demo/server/`:
 
