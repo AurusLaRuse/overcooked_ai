@@ -6,14 +6,12 @@ The objective of this project is to enhance cooperation between a computer-contr
 
 ## New code contribution
 
-`overcooked_ai_py` contains:
+`overcooked_ai_py/mdp/`:
 
-`mdp/`:
 - `overcooked_env.py`: environment classes built on top of the Overcooked mdp
 
-`overcooked_demo` contains:
+`overcooked_demo/server/`:
 
-`server/`:
 - `app.py`: The Flask app 
 - `game.py`: The main logic of the game. State transitions are handled by overcooked.Gridworld object embedded in the game environment
 - `static`:
