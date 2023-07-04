@@ -26,6 +26,26 @@
     <link rel="stylesheet" href="static/css/style.css" type="text/css" />
   </head>
   <body>
+  
+    <style>
+       .log_box {
+          position: absolute;
+          top: 150px;
+          left: 50px;
+          height: 400px;
+          width: 500px;
+          border: 3px solid; 
+          padding: 7px 11px;
+          text-align: left;
+          padding-bottom: 300px;
+          font-family: monospace;
+        }
+    </style>
+    <textarea disabled class="log_box" id=log_input> Waiting for logs... </textarea>
+
+  
+  
+  
     <form>
       <div class="container">
       <div class="row text-center">
@@ -89,6 +109,7 @@
         <button id="create">Create Game</button>
         <button id="join">Join Existing Game</button>
         <button id="leave" style="display:none;">Leave</button>
+        <button id="pause">Pause</button>
     </div>
     
 
