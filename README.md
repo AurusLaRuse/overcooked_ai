@@ -1,4 +1,5 @@
 # Project : Explanability of the Overcooked-AI
+⚠️**The explanation of the game and how to use the environement to play it is folowing this explanation of our work**
 
 
 
@@ -10,7 +11,6 @@
 
 
 
-This is the main repo of Overcooked-AI :
 _________________________________________________________________________________________________________________________________________________________________________
 
 
