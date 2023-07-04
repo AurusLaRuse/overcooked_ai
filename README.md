@@ -16,6 +16,11 @@ The objective of this project is to enhance cooperation between a computer-contr
 - `app.py`: The Flask app 
 - `static`:
     - `js` and `templates` : contain the index.js where we add a log to print the explanations
+ 
+
+## Procces
+
+After launch the game like explained after a chatbox 
 
  
 
