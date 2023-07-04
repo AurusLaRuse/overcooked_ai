@@ -15,7 +15,7 @@ The objective of this project is to enhance cooperation between a computer-contr
 - `game.py`: In this class, you can retrieve the model, the input state, and the action that has been decided by the agent.
 - `app.py`: The Flask app 
 - `static`:
-    - `js` & `templates` : contain the index.js wich we add a log to print the explanations
+    - `js` and `templates` : contain the index.js wich we add a log to print the explanations
 
  
 
