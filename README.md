@@ -17,8 +17,8 @@ The objective of this project is to enhance cooperation between a computer-contr
 - `app.py`: The Flask app 
 - `game.py`: The main logic of the game. State transitions are handled by overcooked.Gridworld object embedded in the game environment
 - `static`:
-  - `js` : contain the index.js to 
-  - `templates` : contain the index.js to 
+>- `js` : contain the index.js to 
+>- `templates` : contain the index.js to 
 
 
 
