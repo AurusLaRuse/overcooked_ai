@@ -1,3 +1,2 @@
-# Overcooked-AI 
+# Overcooked-AI Explanation
 
-<p align="center">
