@@ -1,6 +1,6 @@
 # Project : Explanability of the Overcooked-AI
 
-⚠️ **The explanation of the game and how to use the environement to play it is folowing this explanation of our work**
+⚠️ **The explanation of the game and instructions on how to use the environment to play it are presented alongside our work's explanation.**
 
 The objective of this project is to enhance cooperation between a computer-controlled player and a human player in the Overcooked environment.
 
