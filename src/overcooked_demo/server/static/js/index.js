@@ -1,6 +1,5 @@
 // Persistent network connection that will be used to transmit real-time data
 var socket = io();
-
 /* * * * * * * * * * * * * * * * 
  * Button click event handlers *
  * * * * * * * * * * * * * * * */
@@ -24,6 +23,13 @@ $(function() {
         $('#tutorial').hide();
     });
 });
+
+$(function() {
+    $('#pause').click(function() {
+        socket.emit('pause', {});
+    });
+});
+
 
 $(function(){
     $('[data-toggle="tooltip"]').tooltip({
@@ -122,12 +128,14 @@ socket.on('start_game', function(data) {
     $('#leave').show();
     $('#leave').attr("disabled", false)
     $('#game-title').show();
+
     
     if (!window.spectating) {
         enable_key_listener();
     }
     
     graphics_start(graphics_config);
+    document.getElementById("log_input").value  = "The game has started!";
 });
 
 socket.on('reset_game', function(data) {
@@ -154,6 +162,16 @@ socket.on('reset_game', function(data) {
 socket.on('state_pong', function(data) {
     // Draw state update
     drawState(data['state']);
+});
+
+
+socket.on('explanations',function(data){
+    document.getElementById("log_input").value += "\n" + data.future;
+    
+    if (data.stuck){
+    	document.getElementById("log_input").value  += "\nI'm stuck, can you move ?";
+    }
+    document.getElementById("log_input").scrollTop=document.getElementById("log_input").scrollHeight;
 });
 
 socket.on('end_game', function(data) {
