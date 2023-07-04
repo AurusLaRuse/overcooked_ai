@@ -1,2 +1,0 @@
-# Overcooked-AI Explanation
-
