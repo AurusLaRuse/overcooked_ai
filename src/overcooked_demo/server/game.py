@@ -89,6 +89,7 @@ class Game(ABC):
         lock (Lock):    Used to serialize updates to the game state
         is_active(bool): Whether the game is currently being played or not
         """
+        self.paused = False
         self.players = []
         self.spectators = set()
         self.pending_actions = []
@@ -508,7 +509,8 @@ class OvercookedGame(Game):
         while self._is_active:
             state = queue.get()
             npc_action, _ = policy.action(state)
-            self.mdp.explain.get_gradient(state,npc_action)
+            #self.mdp.explain.get_gradient(state,npc_action)
+            self.mdp.explain.vision(policy,state,npc_action)
             super(OvercookedGame, self).enqueue_action(policy_id, npc_action)
 
     def is_full(self):
