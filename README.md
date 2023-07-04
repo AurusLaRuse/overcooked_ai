@@ -8,12 +8,12 @@ The objective of this project is to enhance cooperation between a computer-contr
 
 `overcooked_ai_py/mdp/`:
 
-- `overcooked_mdp.py`: environment classes built on top of the Overcooked mdp
+- `overcooked_mdp.py`: The Explanation class has been added, which allows for managing explanations.
 
 `overcooked_demo/server/`:
 
+- `game.py`: In this class, you can retrieve the model, the input state, and the action that has been decided by the agent.
 - `app.py`: The Flask app 
-- `game.py`: The main logic of the game. State transitions are handled by overcooked.Gridworld object embedded in the game environment
 - `static`:
     - `js` : contain the index.js to 
     - `templates` : contain the index.js to 
