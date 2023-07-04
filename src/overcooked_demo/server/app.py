@@ -619,6 +619,18 @@ def on_exit():
 # Game Loop #
 #############
 
+@socketio.on("pause")
+def on_pause(data):
+    # Assuming `game` is the instance of the game being played
+    game.paused = True
+
+@socketio.on("resume")
+def on_resume(data):
+    # Assuming `game` is the instance of the game being played
+    game.paused = False
+    with game.lock:
+        game.lock.notify()  # Notify the game loop to resume execution
+
 
 def play_game(game: OvercookedGame, fps=6):
     """
@@ -629,11 +641,19 @@ def play_game(game: OvercookedGame, fps=6):
                             room id for all clients connected to this game
     fps (int):              Number of game ticks that should happen every second
     """
-    status = Game.Status.ACTIVE
-    while status != Game.Status.DONE and status != Game.Status.INACTIVE:
+    
+   
+
+
+    game.status = Game.Status.ACTIVE
+    while game.status != Game.Status.DONE and game.status != Game.Status.INACTIVE:
         with game.lock:
-            status = game.tick()
-        if status == Game.Status.RESET:
+            if game.paused:
+                # Game is paused, wait for resume event
+                game.lock.wait()  # Release the lock and wait until notified
+            else:
+                game.status = game.tick()
+        if game.status == Game.Status.RESET:
             with game.lock:
                 data = game.get_data()
             socketio.emit(
@@ -647,7 +667,9 @@ def play_game(game: OvercookedGame, fps=6):
             )
             socketio.sleep(game.reset_timeout / 1000)
         else:
-            app.logger.info(game.mdp.explain.log_gradient())
+            socketio.emit(
+                "explanations", {"stuck": game.mdp.explain.collide, "future":game.mdp.explain.future}
+            )
             socketio.emit(
             "state_pong", {"state": game.get_state()}, room=game.id
             )
@@ -656,10 +678,10 @@ def play_game(game: OvercookedGame, fps=6):
     with game.lock:
         data = game.get_data()
         socketio.emit(
-            "end_game", {"status": status, "data": data}, room=game.id
+            "end_game", {"status": game.status, "data": data}, room=game.id
         )
 
-        if status != Game.Status.INACTIVE:
+        if game.status != Game.Status.INACTIVE:
             game.deactivate()
         cleanup_game(game)
 
