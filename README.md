@@ -3,7 +3,7 @@
 
 ## Overwiew
 
-The objective of this project is to enhance cooperation between a computer-controlled player and a human player in the Overcooked environment. We bring along the code provide in this [repo](https://github.com/HumanCompatibleAI/overcooked_ai)
+The objective of this project is to enhance cooperation between a computer-controlled player and a human player in the Overcooked environment. We bring along the code provide in this [repo](https://github.com/HumanCompatibleAI/overcooked_ai, where you can find the settings too. And to find the instructions to run a demonstration you can go on this [repo](https://github.com/HumanCompatibleAI/overcooked-demo).
 
 ## New code contribution 
 
