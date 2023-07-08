@@ -1,5 +1,5 @@
 <p align="center">
-# Project : Explanability of the Overcooked-AI
+## Project : Explanability of the Overcooked-AI
   </p>
 <p align="center">
   <!-- <img src="overcooked_ai_js/images/screenshot.png" width="350"> -->
