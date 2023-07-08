@@ -30,5 +30,6 @@ The objective of this project is to enhance cooperation between a computer-contr
 
  `Class Explanation`:
  
-- `method Vision`: This method will predict the futurs actions until th AI agent want to take a concrete action.
+- `Method : Vision`: This method will predict the futurs actions until th AI agent want to take a concrete action.
+- `Instance variable : collide` : This variable enables us to determine when the agent is obstructed by another agent and is unable to complete its objective.
  
