@@ -26,8 +26,9 @@ The objective of this project is to enhance cooperation between a computer-contr
 - `static`:
     - `js` and `templates` : contain the index.js where we add a log to print the explanations.
  
-##Presentation of the class
+##Presentation of the contributions
 
  `Class Explanation`:
-
+ 
+- `method Vision`: This method will predict the futurs actions until th AI agent want to take a concrete action.
  
