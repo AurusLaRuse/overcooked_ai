@@ -5,7 +5,7 @@
   <img src="./image/explanation_demonstration.gif" width="35%"> 
 </p>
 <p align="center">
- <i>Demonstration of the explanation during 6 actions</i>
+ <i>Demonstration of the explanations during 6 actions.</i>
  </p>
 
 
