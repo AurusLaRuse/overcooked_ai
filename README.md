@@ -1,6 +1,7 @@
-# Project : Explanability of the Overcooked-AI
+
 
 <p align="center">
+  # Project : Explanability of the Overcooked-AI
   <!-- <img src="overcooked_ai_js/images/screenshot.png" width="350"> -->
   <img src="./image/explanation_demonstration.gif" width="35%"> 
 </p>
