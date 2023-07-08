@@ -1,10 +1,11 @@
 # Project : Explanability of the Overcooked-AI
 
-⚠️ **The explanation of the game and instructions on how to use the environment to play it are presented alongside our work's explanation.**
 
-The objective of this project is to enhance cooperation between a computer-controlled player and a human player in the Overcooked environment.
+## Overwiew
 
-## New code contribution
+The objective of this project is to enhance cooperation between a computer-controlled player and a human player in the Overcooked environment. We bring along the code provide in this [repo](https://github.com/HumanCompatibleAI/overcooked_ai)
+
+## New code contribution 
 
 `overcooked_ai_py/mdp/`:
 
