@@ -26,3 +26,8 @@ The objective of this project is to enhance cooperation between a computer-contr
 - `static`:
     - `js` and `templates` : contain the index.js where we add a log to print the explanations.
  
+##Presentation of the class
+
+ `Class Explanation`:
+
+ 
