@@ -3,8 +3,8 @@
 <p align="center">
   <!-- <img src="overcooked_ai_js/images/screenshot.png" width="350"> -->
   <img src="./image/explanation_demonstration.gif" width="50%"> 
-  <i>Demonstration of the explanation during 6 actions</i>
 </p>
+ <i>Demonstration of the explanation during 6 actions</i>
 
 
 ## Overwiew
